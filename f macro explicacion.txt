@@ -1,0 +1,4 @@
+En arduino existe el macro F() que permite instruir al compilador para que almacene una cadena constante solo en FLASH.
+Además la función Serial.print() esta sobrecargada de forma que se compila de forma distinta para cadenas variables que para cadenas constantes.
+La primera vez que usamos la función Serial.print(F()) el compilador añade el código de la librería necesario para manejar cadenas constantes y por eso el programa crece un poco. Los siguientes usos de la función solo incrementen un poco el código debido a la diferente gestión de los datos.
+Lo importante es que cada uso de F() ahorra una cantidad de RAM igual a la longitud de la cadena usada! Y en RAM es donde mas justo esta el Atmega328p.
